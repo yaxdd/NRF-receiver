@@ -18,29 +18,10 @@ RES_VECT  CODE    0x0000	;declaramos el vector de reset
     GOTO    START
 
 ISRHV     CODE    0x0008
-    GOTO    HIGH_ISR
+    retfie
 ISRLV     CODE    0x0018
-    GOTO    LOW_ISR
+    retfie
 
-ISRH      CODE
-HIGH_ISR
-			      ;guardamos el contexto al entrar  a la interrupcion
-    movwf W_TEMP
-    movff STATUS, STATUS_TEMP
-    movff BSR, BSR_TEMP
-    btfss INTCON,TMR0IF	      ;reviso la bandera de interrupcion del timer0
-    bra EXIT_ISR		      ; si no se cumplió, salgo de la interrupcion
-    BCF INTCON,TMR0IF	      ; Limpiamos la bandera
-    bcf T0CON,TMR0ON	      ;desactivo el timer
-    EXIT_ISR
-			      ;Recuperamos el contexto
-    movf W_TEMP,W
-    movff STATUS_TEMP,STATUS
-    movff BSR_TEMP,BSR
-    retfie
-ISRL      CODE
-LOW_ISR
-    retfie
 
 
 MAIN_PROG CODE			;generamos la seccion de codigo de nuestro programa
@@ -63,6 +44,7 @@ START
     loop
     call NRF_DATA_READY // esperamos a que el NRF reciba algun dato
     call NRF_READ_BUFFER
+    // procesar bytes recibidos en BUFFER_DATA y BUFFER_DATA+1
     goto loop
     END
 
