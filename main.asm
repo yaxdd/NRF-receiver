@@ -38,9 +38,6 @@ START
     call TMR0_INIT
     call SPI_INIT
     call NRF_INIT_RX
-    call DELAY_1MS
-    call NRF_SET_RX_MODE    ;transicion de configuracion
-    call DELAY_1MS
     loop
     call NRF_DATA_READY // esperamos a que el NRF reciba algun dato
     call NRF_READ_BUFFER

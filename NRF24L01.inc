@@ -177,7 +177,7 @@ NRF_INIT_RX
     movlw EN_AA
     movwf COMMAND
     call NRF_WRITE_REGISTER
-    movlw 0x00			;[ERX_P0:0]
+    movlw 0x01			;[ERX_P0:0]
     movwf DATA_TO_SEND
     movlw EN_RXADDR
     movwf COMMAND
@@ -223,6 +223,9 @@ NRF_INIT_RX
     movlw RX_PW_P0
     movwf COMMAND
     call NRF_WRITE_REGISTER
+    call DELAY_1MS
+    call NRF_SET_RX_MODE    ;transicion de configuracion
+    call DELAY_1MS
     return
 
 
