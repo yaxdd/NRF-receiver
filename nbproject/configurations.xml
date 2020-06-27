@@ -18,7 +18,16 @@
                    projectFiles="false">
       <itemPath>Makefile</itemPath>
     </logicalFolder>
+    <itemPath>NRF24L01.inc</itemPath>
+    <itemPath>SPI.inc</itemPath>
+    <itemPath>SPI_H.inc</itemPath>
+    <itemPath>TIMER0.inc</itemPath>
+    <itemPath>fuses.inc</itemPath>
+    <itemPath>main.asm</itemPath>
   </logicalFolder>
+  <sourceRootList>
+    <Elem>.</Elem>
+  </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
     <conf name="default" type="2">
