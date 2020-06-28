@@ -1,0 +1,4 @@
+Warning[207] E:\TAREAS\SC\NRF_RECEIVER.X\SPI.INC 20 : Found label after column 1. (esperar_lectura)
+Warning[207] E:\TAREAS\SC\NRF_RECEIVER.X\SPI.INC 30 : Found label after column 1. (esperar)
+Warning[207] E:\TAREAS\SC\NRF_RECEIVER.X\NRF24L01.INC 150 : Found label after column 1. (wait_data)
+Warning[207] E:\TAREAS\SC\NRF_RECEIVER.X\MAIN.ASM 41 : Found label after column 1. (loop)

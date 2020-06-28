@@ -39,9 +39,9 @@ START
     call SPI_INIT
     call NRF_INIT_RX
     loop
-    call NRF_DATA_READY // esperamos a que el NRF reciba algun dato
+    call NRF_DATA_READY ; esperamos a que el NRF reciba algun dato
     call NRF_READ_BUFFER
-    // procesar bytes recibidos en BUFFER_DATA y BUFFER_DATA+1
+    ; procesar bytes recibidos en BUFFER_DATA y BUFFER_DATA+1
     goto loop
     END
 
