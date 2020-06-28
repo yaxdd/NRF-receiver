@@ -1,17 +1,19 @@
 MPLINK 5.08, LINKER
-Linker Map File - Created Sun Jun 28 10:26:28 2020
+Linker Map File - Created Sun Jun 28 10:44:42 2020
 
                                  Section Info
                   Section       Type    Address   Location Size(Bytes)
                 ---------  ---------  ---------  ---------  ---------
                  RES_VECT       code   0x000000    program   0x000004
                    .cinit    romdata   0x000004    program   0x000002
-                    ISRHV       code   0x000008    program   0x000002
-                    ISRLV       code   0x000018    program   0x000002
-              NRF_ROUTINE       code   0x00001a    program   0x0001be
-          TIMER0_ROUTINES       code   0x0001d8    program   0x000054
-              SPI_ROUTINE       code   0x00022c    program   0x000034
-                MAIN_PROG       code   0x000260    program   0x00001c
+                     ISRL       code   0x000006    program   0x000002
+                    ISRHV       code   0x000008    program   0x000004
+                    ISRLV       code   0x000018    program   0x000004
+              NRF_ROUTINE       code   0x00001c    program   0x0001be
+          TIMER0_ROUTINES       code   0x0001da    program   0x000054
+              SPI_ROUTINE       code   0x00022e    program   0x000034
+                MAIN_PROG       code   0x000262    program   0x000026
+                     ISRH       code   0x000288    program   0x00001e
 .config_300000_BUILD/DEFAULT/PRODUCTION/MAIN.O    romdata   0x300000    program   0x000001
 .config_300001_BUILD/DEFAULT/PRODUCTION/MAIN.O    romdata   0x300001    program   0x000001
 .config_300002_BUILD/DEFAULT/PRODUCTION/MAIN.O    romdata   0x300002    program   0x000001
@@ -31,44 +33,46 @@ Linker Map File - Created Sun Jun 28 10:26:28 2020
                               Program Memory Usage 
                                Start         End      
                            ---------   ---------      
-                            0x000000    0x000005      
-                            0x000008    0x000009      
-                            0x000018    0x00027b      
+                            0x000000    0x00000b      
+                            0x000018    0x0002a5      
                             0x300000    0x300003      
                             0x300005    0x300006      
                             0x300008    0x30000d      
-            632 out of 33048 program addresses used, program memory utilization is 1%
+            678 out of 33048 program addresses used, program memory utilization is 2%
 
 
 
                               Symbols - Sorted by Name
                      Name    Address   Location    Storage File                     
                 ---------  ---------  ---------  --------- ---------                
-              DELAY_100MS   0x0001fc    program     static E:\Tareas\SC\NRF_Receiver.X\TIMER0.inc
-               DELAY_10MS   0x00020c    program     static E:\Tareas\SC\NRF_Receiver.X\TIMER0.inc
-                DELAY_1MS   0x00021c    program     static E:\Tareas\SC\NRF_Receiver.X\TIMER0.inc
-           NRF_DATA_READY   0x000128    program     static E:\Tareas\SC\NRF_Receiver.X\NRF24L01.inc
-                NRF_FLUSH   0x000032    program     static E:\Tareas\SC\NRF_Receiver.X\NRF24L01.inc
-              NRF_INIT_RX   0x000136    program     static E:\Tareas\SC\NRF_Receiver.X\NRF24L01.inc
-          NRF_READ_BUFFER   0x0000fa    program     static E:\Tareas\SC\NRF_Receiver.X\NRF24L01.inc
-        NRF_READ_REGISTER   0x0000e6    program     static E:\Tareas\SC\NRF_Receiver.X\NRF24L01.inc
-            NRF_SEND_DATA   0x000098    program     static E:\Tareas\SC\NRF_Receiver.X\NRF24L01.inc
-          NRF_SET_RX_MODE   0x0000c6    program     static E:\Tareas\SC\NRF_Receiver.X\NRF24L01.inc
-       NRF_WRITE_BUFFER_2   0x000078    program     static E:\Tareas\SC\NRF_Receiver.X\NRF24L01.inc
-       NRF_WRITE_BUFFER_5   0x000040    program     static E:\Tareas\SC\NRF_Receiver.X\NRF24L01.inc
-       NRF_WRITE_REGISTER   0x00001a    program     static E:\Tareas\SC\NRF_Receiver.X\NRF24L01.inc
-                SPI_CLOSE   0x00023e    program     static E:\Tareas\SC\NRF_Receiver.X\SPI.inc
-                 SPI_INIT   0x00022c    program     static E:\Tareas\SC\NRF_Receiver.X\SPI.inc
-                 SPI_READ   0x000244    program     static E:\Tareas\SC\NRF_Receiver.X\SPI.inc
-                SPI_WRITE   0x000252    program     static E:\Tareas\SC\NRF_Receiver.X\SPI.inc
-                    START   0x000260    program     static E:\Tareas\SC\NRF_Receiver.X\main.asm
-                TMR0_INIT   0x0001d8    program     static E:\Tareas\SC\NRF_Receiver.X\TIMER0.inc
-              TMR0_RELOAD   0x0001ee    program     static E:\Tareas\SC\NRF_Receiver.X\TIMER0.inc
-                    delay   0x0001e8    program     static E:\Tareas\SC\NRF_Receiver.X\TIMER0.inc
-                  esperar   0x00025a    program     static E:\Tareas\SC\NRF_Receiver.X\SPI.inc
-          esperar_lectura   0x000248    program     static E:\Tareas\SC\NRF_Receiver.X\SPI.inc
-                     loop   0x000270    program     static E:\Tareas\SC\NRF_Receiver.X\main.asm
-                wait_data   0x000128    program     static E:\Tareas\SC\NRF_Receiver.X\NRF24L01.inc
+              DELAY_100MS   0x0001fe    program     static E:\Tareas\SC\NRF_Receiver.X\TIMER0.inc
+               DELAY_10MS   0x00020e    program     static E:\Tareas\SC\NRF_Receiver.X\TIMER0.inc
+                DELAY_1MS   0x00021e    program     static E:\Tareas\SC\NRF_Receiver.X\TIMER0.inc
+                 EXIT_ISR   0x00029a    program     static E:\Tareas\SC\NRF_Receiver.X\main.asm
+                 HIGH_ISR   0x000288    program     static E:\Tareas\SC\NRF_Receiver.X\main.asm
+                  LOW_ISR   0x000006    program     static E:\Tareas\SC\NRF_Receiver.X\main.asm
+           NRF_DATA_READY   0x00012a    program     static E:\Tareas\SC\NRF_Receiver.X\NRF24L01.inc
+                NRF_FLUSH   0x000034    program     static E:\Tareas\SC\NRF_Receiver.X\NRF24L01.inc
+              NRF_INIT_RX   0x000138    program     static E:\Tareas\SC\NRF_Receiver.X\NRF24L01.inc
+          NRF_READ_BUFFER   0x0000fc    program     static E:\Tareas\SC\NRF_Receiver.X\NRF24L01.inc
+        NRF_READ_REGISTER   0x0000e8    program     static E:\Tareas\SC\NRF_Receiver.X\NRF24L01.inc
+            NRF_SEND_DATA   0x00009a    program     static E:\Tareas\SC\NRF_Receiver.X\NRF24L01.inc
+          NRF_SET_RX_MODE   0x0000c8    program     static E:\Tareas\SC\NRF_Receiver.X\NRF24L01.inc
+       NRF_WRITE_BUFFER_2   0x00007a    program     static E:\Tareas\SC\NRF_Receiver.X\NRF24L01.inc
+       NRF_WRITE_BUFFER_5   0x000042    program     static E:\Tareas\SC\NRF_Receiver.X\NRF24L01.inc
+       NRF_WRITE_REGISTER   0x00001c    program     static E:\Tareas\SC\NRF_Receiver.X\NRF24L01.inc
+                SPI_CLOSE   0x000240    program     static E:\Tareas\SC\NRF_Receiver.X\SPI.inc
+                 SPI_INIT   0x00022e    program     static E:\Tareas\SC\NRF_Receiver.X\SPI.inc
+                 SPI_READ   0x000246    program     static E:\Tareas\SC\NRF_Receiver.X\SPI.inc
+                SPI_WRITE   0x000254    program     static E:\Tareas\SC\NRF_Receiver.X\SPI.inc
+                    START   0x000262    program     static E:\Tareas\SC\NRF_Receiver.X\main.asm
+                TMR0_INIT   0x0001da    program     static E:\Tareas\SC\NRF_Receiver.X\TIMER0.inc
+              TMR0_RELOAD   0x0001f0    program     static E:\Tareas\SC\NRF_Receiver.X\TIMER0.inc
+                    delay   0x0001ea    program     static E:\Tareas\SC\NRF_Receiver.X\TIMER0.inc
+                  esperar   0x00025c    program     static E:\Tareas\SC\NRF_Receiver.X\SPI.inc
+          esperar_lectura   0x00024a    program     static E:\Tareas\SC\NRF_Receiver.X\SPI.inc
+                     loop   0x00027c    program     static E:\Tareas\SC\NRF_Receiver.X\main.asm
+                wait_data   0x00012a    program     static E:\Tareas\SC\NRF_Receiver.X\NRF24L01.inc
                  BSR_TEMP   0x000002       data     static E:\Tareas\SC\NRF_Receiver.X\main.asm
               BUFFER_DATA   0x000009       data     static E:\Tareas\SC\NRF_Receiver.X\main.asm
                   COMMAND   0x000008       data     static E:\Tareas\SC\NRF_Receiver.X\main.asm
@@ -84,31 +88,34 @@ Linker Map File - Created Sun Jun 28 10:26:28 2020
                               Symbols - Sorted by Address
                      Name    Address   Location    Storage File                     
                 ---------  ---------  ---------  --------- ---------                
-       NRF_WRITE_REGISTER   0x00001a    program     static E:\Tareas\SC\NRF_Receiver.X\NRF24L01.inc
-                NRF_FLUSH   0x000032    program     static E:\Tareas\SC\NRF_Receiver.X\NRF24L01.inc
-       NRF_WRITE_BUFFER_5   0x000040    program     static E:\Tareas\SC\NRF_Receiver.X\NRF24L01.inc
-       NRF_WRITE_BUFFER_2   0x000078    program     static E:\Tareas\SC\NRF_Receiver.X\NRF24L01.inc
-            NRF_SEND_DATA   0x000098    program     static E:\Tareas\SC\NRF_Receiver.X\NRF24L01.inc
-          NRF_SET_RX_MODE   0x0000c6    program     static E:\Tareas\SC\NRF_Receiver.X\NRF24L01.inc
-        NRF_READ_REGISTER   0x0000e6    program     static E:\Tareas\SC\NRF_Receiver.X\NRF24L01.inc
-          NRF_READ_BUFFER   0x0000fa    program     static E:\Tareas\SC\NRF_Receiver.X\NRF24L01.inc
-                wait_data   0x000128    program     static E:\Tareas\SC\NRF_Receiver.X\NRF24L01.inc
-           NRF_DATA_READY   0x000128    program     static E:\Tareas\SC\NRF_Receiver.X\NRF24L01.inc
-              NRF_INIT_RX   0x000136    program     static E:\Tareas\SC\NRF_Receiver.X\NRF24L01.inc
-                TMR0_INIT   0x0001d8    program     static E:\Tareas\SC\NRF_Receiver.X\TIMER0.inc
-                    delay   0x0001e8    program     static E:\Tareas\SC\NRF_Receiver.X\TIMER0.inc
-              TMR0_RELOAD   0x0001ee    program     static E:\Tareas\SC\NRF_Receiver.X\TIMER0.inc
-              DELAY_100MS   0x0001fc    program     static E:\Tareas\SC\NRF_Receiver.X\TIMER0.inc
-               DELAY_10MS   0x00020c    program     static E:\Tareas\SC\NRF_Receiver.X\TIMER0.inc
-                DELAY_1MS   0x00021c    program     static E:\Tareas\SC\NRF_Receiver.X\TIMER0.inc
-                 SPI_INIT   0x00022c    program     static E:\Tareas\SC\NRF_Receiver.X\SPI.inc
-                SPI_CLOSE   0x00023e    program     static E:\Tareas\SC\NRF_Receiver.X\SPI.inc
-                 SPI_READ   0x000244    program     static E:\Tareas\SC\NRF_Receiver.X\SPI.inc
-          esperar_lectura   0x000248    program     static E:\Tareas\SC\NRF_Receiver.X\SPI.inc
-                SPI_WRITE   0x000252    program     static E:\Tareas\SC\NRF_Receiver.X\SPI.inc
-                  esperar   0x00025a    program     static E:\Tareas\SC\NRF_Receiver.X\SPI.inc
-                    START   0x000260    program     static E:\Tareas\SC\NRF_Receiver.X\main.asm
-                     loop   0x000270    program     static E:\Tareas\SC\NRF_Receiver.X\main.asm
+                  LOW_ISR   0x000006    program     static E:\Tareas\SC\NRF_Receiver.X\main.asm
+       NRF_WRITE_REGISTER   0x00001c    program     static E:\Tareas\SC\NRF_Receiver.X\NRF24L01.inc
+                NRF_FLUSH   0x000034    program     static E:\Tareas\SC\NRF_Receiver.X\NRF24L01.inc
+       NRF_WRITE_BUFFER_5   0x000042    program     static E:\Tareas\SC\NRF_Receiver.X\NRF24L01.inc
+       NRF_WRITE_BUFFER_2   0x00007a    program     static E:\Tareas\SC\NRF_Receiver.X\NRF24L01.inc
+            NRF_SEND_DATA   0x00009a    program     static E:\Tareas\SC\NRF_Receiver.X\NRF24L01.inc
+          NRF_SET_RX_MODE   0x0000c8    program     static E:\Tareas\SC\NRF_Receiver.X\NRF24L01.inc
+        NRF_READ_REGISTER   0x0000e8    program     static E:\Tareas\SC\NRF_Receiver.X\NRF24L01.inc
+          NRF_READ_BUFFER   0x0000fc    program     static E:\Tareas\SC\NRF_Receiver.X\NRF24L01.inc
+                wait_data   0x00012a    program     static E:\Tareas\SC\NRF_Receiver.X\NRF24L01.inc
+           NRF_DATA_READY   0x00012a    program     static E:\Tareas\SC\NRF_Receiver.X\NRF24L01.inc
+              NRF_INIT_RX   0x000138    program     static E:\Tareas\SC\NRF_Receiver.X\NRF24L01.inc
+                TMR0_INIT   0x0001da    program     static E:\Tareas\SC\NRF_Receiver.X\TIMER0.inc
+                    delay   0x0001ea    program     static E:\Tareas\SC\NRF_Receiver.X\TIMER0.inc
+              TMR0_RELOAD   0x0001f0    program     static E:\Tareas\SC\NRF_Receiver.X\TIMER0.inc
+              DELAY_100MS   0x0001fe    program     static E:\Tareas\SC\NRF_Receiver.X\TIMER0.inc
+               DELAY_10MS   0x00020e    program     static E:\Tareas\SC\NRF_Receiver.X\TIMER0.inc
+                DELAY_1MS   0x00021e    program     static E:\Tareas\SC\NRF_Receiver.X\TIMER0.inc
+                 SPI_INIT   0x00022e    program     static E:\Tareas\SC\NRF_Receiver.X\SPI.inc
+                SPI_CLOSE   0x000240    program     static E:\Tareas\SC\NRF_Receiver.X\SPI.inc
+                 SPI_READ   0x000246    program     static E:\Tareas\SC\NRF_Receiver.X\SPI.inc
+          esperar_lectura   0x00024a    program     static E:\Tareas\SC\NRF_Receiver.X\SPI.inc
+                SPI_WRITE   0x000254    program     static E:\Tareas\SC\NRF_Receiver.X\SPI.inc
+                  esperar   0x00025c    program     static E:\Tareas\SC\NRF_Receiver.X\SPI.inc
+                    START   0x000262    program     static E:\Tareas\SC\NRF_Receiver.X\main.asm
+                     loop   0x00027c    program     static E:\Tareas\SC\NRF_Receiver.X\main.asm
+                 HIGH_ISR   0x000288    program     static E:\Tareas\SC\NRF_Receiver.X\main.asm
+                 EXIT_ISR   0x00029a    program     static E:\Tareas\SC\NRF_Receiver.X\main.asm
                    W_TEMP   0x000000       data     static E:\Tareas\SC\NRF_Receiver.X\main.asm
               STATUS_TEMP   0x000001       data     static E:\Tareas\SC\NRF_Receiver.X\main.asm
                  BSR_TEMP   0x000002       data     static E:\Tareas\SC\NRF_Receiver.X\main.asm
