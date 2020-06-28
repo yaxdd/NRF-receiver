@@ -110,12 +110,12 @@ NRF_SET_RX_MODE
     call NRF_FLUSH	    ;limpiamos las colas
     movlw 0x70
     movwf DATA_TO_SEND
-    movf STATUS_VAL,W
+    movlw STATUS_VAL
     movwf COMMAND
     call NRF_WRITE_REGISTER ;limpiamos las banderas
     movlw 0x03
     movwf DATA_TO_SEND
-    movf CONFIG_VAL,W
+    movlw CONFIG_VAL
     movwf COMMAND
     call NRF_WRITE_REGISTER ;colocamos en modo RX [prim_RX:1]
     bsf PORTB,RB3	    ;CE	 : CHIP ENABLE
@@ -123,7 +123,7 @@ NRF_SET_RX_MODE
 NRF_READ_REGISTER
     bcf PORTB, RB2
     movf COMMAND,W
-    iorlw W_REGISTER
+    iorlw R_REGISTER
     movwf TXDATA
     call SPI_WRITE
     call SPI_READ
@@ -151,7 +151,7 @@ NRF_DATA_READY
     movlw STATUS_VAL
     movwf COMMAND
     call NRF_READ_REGISTER
-    btfsc RXDATA, 6	; revisamos el bit RX_DR, 1 si llegó un dato
+    btfss RXDATA, 6	; revisamos el bit RX_DR, 1 si llegó un dato
     bra wait_data
     return
 NRF_INIT_RX
