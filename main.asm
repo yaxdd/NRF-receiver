@@ -3,6 +3,7 @@
     #include "SPI.inc"
     #include "NRF24L01.inc"
     #include "TIMER0.inc"
+    #include "PWM.inc"
 variables UDATA_ACS 0x00
 W_TEMP	    res 1
 STATUS_TEMP res 1
@@ -67,6 +68,8 @@ START
     loop
     call NRF_DATA_READY ; esperamos a que el NRF reciba algun dato
     call NRF_READ_BUFFER
+    call CONFIGURE_PWM
+    call DELAY_100MS
     ; procesar bytes recibidos en BUFFER_DATA y BUFFER_DATA+1
     goto loop
     END

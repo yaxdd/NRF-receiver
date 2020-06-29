@@ -17,6 +17,7 @@
       <itemPath>SPI.inc</itemPath>
       <itemPath>SPI_H.inc</itemPath>
       <itemPath>TIMER0.inc</itemPath>
+      <itemPath>PWM.inc</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
