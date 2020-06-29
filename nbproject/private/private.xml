@@ -5,6 +5,7 @@
         <group>
             <file>file:/E:/Tareas/SC/NRF_Receiver.X/NRF24L01.inc</file>
             <file>file:/E:/Tareas/SC/NRF_Receiver.X/main.asm</file>
+            <file>file:/E:/Tareas/SC/NRF_Receiver.X/PWM.inc</file>
         </group>
     </open-files>
 </project-private>

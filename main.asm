@@ -56,21 +56,24 @@ START
     ;seleccionamos el oscilador interno y lo configuramos a 8 mhz
     movlw 0x72
     movwf OSCCON
+    clrf    TRISC
+    clrf    PORTC
     ;configuro las interrupciones
     clrf PIR1	    ;limpiamos bandera de interrupciones
     clrf INTCON	    ;limpiamos el registro
     clrf PIE1	    ;desactivamos todas las interrupciones de perifericos
     bsf INTCON,GIE	    ;activamos las interrupciones globales
     bsf INTCON,TMR0IE  ; y la interrupcion del timer0
+    call PWM_INIT
     call TMR0_INIT
     call SPI_INIT
     call NRF_INIT_RX
     loop
     call NRF_DATA_READY ; esperamos a que el NRF reciba algun dato
     call NRF_READ_BUFFER
+    ; procesar bytes recibidos en BUFFER_DATA y BUFFER_DATA+1
     call CONFIGURE_PWM
     call DELAY_100MS
-    ; procesar bytes recibidos en BUFFER_DATA y BUFFER_DATA+1
     goto loop
     END
 
